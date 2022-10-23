@@ -12,5 +12,5 @@ func AuthAdapter() echo.MiddlewareFunc {
 		Claims: &models.JwtCustomClaims{},
 		SigningKey: []byte("fil necati"),
 	}
-	return middleware.JWTWithConfig(config)
+	return middleware.JWTWithConfig(config) 
 }
