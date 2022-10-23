@@ -17,7 +17,7 @@ var err error
 	")/"
  */
 func Init() gorm.DB {
-	dns := " mysql://bf455b2579977c:43489f3a@us-cdbr-east-06.cleardb.net/heroku_b5def9f32733d0c?reconnect=true"
+	dns := "bf455b2579977c:43489f3a@tcp(us-cdbr-east-06.cleardb.net:3306)/heroku_b5def9f32733d0c"
 	db, err = gorm.Open(mysql.Open(dns))
 	db.AutoMigrate(&models.User{}, &models.Record{})
 	if err != nil {
