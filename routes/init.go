@@ -13,9 +13,9 @@ var Network = E.Group("", adapter.ConsoleAdapter)
 func Init() {
 	Api()
 	Web()
-	port := os.Getenv("PORT")
+	port := "0.0.0.0:" + os.Getenv("PORT")
 	if port == "" {
-		port = ":9000" // Default port if not specified
+		port = "0.0.0.0:9000" // Default port if not specified
 	}
 	E.Logger.Fatal(E.Start(port))
 }
