@@ -17,7 +17,7 @@ var err error
 	")/"
  */
 func Init() gorm.DB {
-	dns := "admin:root12345@tcp(aws-simplified.c8i70zggrjmm.us-east-1.rds.amazonaws.com:3306)/cryptology_homework"
+	dns := "admin:root12345@tcp(aws-simplified.c8i70zggrjmm.us-east-1.rds.amazonaws.com:3306)/cryptology_homework?parseTime=true"
 	db, err = gorm.Open(mysql.Open(dns))
 	db.AutoMigrate(&models.User{}, &models.Record{})
 	if err != nil {
