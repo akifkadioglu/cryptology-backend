@@ -1,7 +1,6 @@
 package adapter
 
 import (
-	"setup/env"
 	"setup/models"
 
 	"github.com/labstack/echo/v4"
@@ -11,7 +10,7 @@ import (
 func AuthAdapter() echo.MiddlewareFunc {
 	config := middleware.JWTConfig{
 		Claims: &models.JwtCustomClaims{},
-		SigningKey: []byte(env.GoDotEnvVariable("APP_KEY")),
+		SigningKey: []byte("fil necati"),
 	}
 	return middleware.JWTWithConfig(config)
 }
